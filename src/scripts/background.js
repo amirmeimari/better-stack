@@ -2,7 +2,7 @@ let toggle = true;
 
 chrome.browserAction.onClicked.addListener((tab) => {
   toggle = !toggle;  
-  chrome.browserAction.setIcon({path: (toggle ? "icons/icon_16x16.png" : "icons/icon_16x16.png")});
+  chrome.browserAction.setIcon({path: (toggle ? "icons/icon_16x16.png" : "icons/icon_16x16_disabled.png")});
   chrome.tabs.sendMessage(tab.id, toggle);
 });
 
