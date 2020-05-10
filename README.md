@@ -1,6 +1,6 @@
 # Better Stack
 
-Better StackOverflow with full with and enhanced fonts!
+Better StackOverflow with full-width and enhanced fonts!
 
 
 ## Get Started
