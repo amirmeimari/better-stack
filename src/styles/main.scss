@@ -1,6 +1,6 @@
 /* Fonts */
 body:not(.bso-disabled) body,
-.inner-content p {
+body:not(.bso-disabled) .inner-content p {
   font-family: 'Roboto', Arial, sans-serif !important;
   line-height: 1.7;
 }
@@ -24,7 +24,7 @@ body:not(.bso-disabled) .site-footer--container {
 
 /* Sidebar styles */
 body:not(.bso-disabled) .sidebar-linked,
-.sidebar-related {
+body:not(.bso-disabled) .sidebar-related {
   border: 1px solid #404345;
   border-radius: 3px;
 }
