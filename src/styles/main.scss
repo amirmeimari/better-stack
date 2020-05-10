@@ -1,35 +1,38 @@
-body,
+/* Fonts */
+body:not(.bso-disabled) body,
 .inner-content p {
   font-family: 'Roboto', Arial, sans-serif !important;
   line-height: 1.7;
 }
 
-.top-bar div {
+/* Full width */
+body:not(.bso-disabled) .top-bar div {
   max-width: unset !important;
 }
 
-.container {
+body:not(.bso-disabled) .container {
   max-width: unset !important;
 }
 
-#content {
+body:not(.bso-disabled) #content {
   max-width: unset !important;
 }
 
-.site-footer--container {
+body:not(.bso-disabled) .site-footer--container {
   max-width: unset !important;
 }
 
-.sidebar-linked,
+/* Sidebar styles */
+body:not(.bso-disabled) .sidebar-linked,
 .sidebar-related {
   border: 1px solid #404345;
   border-radius: 3px;
 }
 
-.sidebar-linked {
+body:not(.bso-disabled) .sidebar-linked {
   padding: 5px 15px;
 }
 
-.sidebar-related {
+body:not(.bso-disabled) .sidebar-related {
   padding: 15px 15px 0 15px;
 }
