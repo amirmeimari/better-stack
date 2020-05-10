@@ -42,8 +42,8 @@ const script = () => {
 
 const background = () => {
   return src('./src/scripts/background.js')
-  .pipe(dest(destination()))
-  .pipe(connect.reload())
+    .pipe(dest(destination()))
+    .pipe(connect.reload())
 }
 
 const zipAll = () => {
@@ -52,14 +52,30 @@ const zipAll = () => {
     .pipe(dest(destination('../build')))
 }
 
+const icons = () => {
+  return src('./src/icons/*.png')
+    .pipe(dest(destination('/icons')))
+    .pipe(connect.reload())
+}
+
 exports.clean = clean
-exports.build = series(clean, parallel(manifest, css, script, background), zipAll)
-exports.dev = series(clean, parallel(manifest, css, script, background), (done) => {
-  connect.server({
-    root: destination('/'),
-    livereload: true,
-  })
-  watch('styles/*.scss')
-  watch('scripts/*.js')
-  done()
-})
+exports.build = series(
+  clean,
+  parallel(manifest, css, script, background, icons),
+  zipAll,
+)
+exports.dev = series(
+  clean,
+  parallel(manifest, css, script, background, icons),
+  (done) => {
+    connect.server({
+      root: destination('/'),
+      livereload: true,
+    })
+    watch('./src/styles/*.scss', css)
+    watch('./src/scripts/*.js', parallel(script, background))
+    watch('./manifest.json', manifest)
+    watch('./src/icons/*.png', icons)
+    done()
+  },
+)

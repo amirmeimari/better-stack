@@ -2,10 +2,26 @@
   "manifest_version": 2,
   "name": "better stack",
   "short_name": "better_stack",
-  "description": "better stack will get you a better stackoverflow!",
-  "author": "amir meimari @amirmeimari",
+  "description": "Better stack will get you a better stackoverflow!",
+  "author": "Amir Meimari @amirmeimari",
   "version": "1.0.0",
-  "icons": {},
-  "browser_action": {},
-  "permissions": ["activeTab"]
+  "icons": {
+    "16": "icons/icon_16x16.png",
+    "48": "icons/icon_48x48.png",
+    "128": "icons/icon_128x128.png"
+  },
+  "content_scripts": [
+    {
+      "css": ["css/main.css"],
+      "js": ["js/toggle.js"],
+      "matches": ["https://stackoverflow.com/*"]
+    }
+  ],
+  "browser_action": {
+    "default_icon": "icons/icon_16x16.png"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "permissions": ["activeTab", "management"]
 }

@@ -1,1 +1,1 @@
-console.log('t');
+// chrome.runtime.reload()
