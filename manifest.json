@@ -1,0 +1,11 @@
+{
+  "manifest_version": 2,
+  "name": "better stack",
+  "short_name": "better_stack",
+  "description": "better stack will get you a better stackoverflow!",
+  "author": "amir meimari @amirmeimari",
+  "version": "1.0.0",
+  "icons": {},
+  "browser_action": {},
+  "permissions": ["activeTab"]
+}
